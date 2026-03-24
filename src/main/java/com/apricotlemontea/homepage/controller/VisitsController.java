@@ -1,5 +1,6 @@
 package com.apricotlemontea.homepage.controller;
 
+import com.apricotlemontea.homepage.consts.Consts;
 import com.apricotlemontea.homepage.service.VisitsService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,11 +23,16 @@ public class VisitsController {
 
     @PostMapping()
     public ResponseEntity<Map<String, Object>> countVisits(@RequestParam String page) {
+        Map<String, Object> res = new HashMap<>();
 
-        Integer res = service.countVisits(page);
-        Map<String, Object> result = new HashMap<>();
-        result.put("msg", res);
-        return ResponseEntity.status(HttpStatus.OK).body(result);
+        if (!Consts.PAGE_LIST.contains(page)) {
+            res.put("msg", "invalid page name");
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(res);
+        }
+
+        Integer result = service.countVisits(page);
+        res.put("msg", result);
+        return ResponseEntity.status(HttpStatus.OK).body(res);
 
     }
 }

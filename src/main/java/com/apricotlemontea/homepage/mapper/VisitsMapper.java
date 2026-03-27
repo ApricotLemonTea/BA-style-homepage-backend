@@ -6,5 +6,5 @@ import java.time.LocalDate;
 
 @Mapper
 public interface VisitsMapper {
-    int countVisits(LocalDate date, String page);
+    int countPageVisits(LocalDate date, String page);
 }

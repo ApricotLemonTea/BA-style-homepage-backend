@@ -15,9 +15,9 @@ public class VisitsService {
     }
 
     @Transactional
-    public Integer countVisits(String page) {
+    public Integer countPageVisits(String page) {
         LocalDate today = LocalDate.now();
 
-        return mapper.countVisits(today, page);
+        return mapper.countPageVisits(today, page);
     }
 }

@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.apricotlemontea.homepage.mapper.VisitsMapper">
 
-    <insert id="countVisits">
+    <insert id="countPageVisits">
         INSERT INTO hp_daily_visits (visit_date, page, visit_count)
         VALUES (#{date}, #{page}, 1)
         ON DUPLICATE KEY

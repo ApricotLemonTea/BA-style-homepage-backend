@@ -1,6 +1,7 @@
 package com.apricotlemontea.homepage.controller;
 
 import com.apricotlemontea.homepage.consts.Consts;
+import com.apricotlemontea.homepage.dto.PageVisitsData;
 import com.apricotlemontea.homepage.service.VisitsService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -33,6 +34,12 @@ public class VisitsController {
 
         Integer result = service.countPageVisits(page);
         res.put("msg", result);
+        return ResponseEntity.status(HttpStatus.OK).body(res);
+    }
+
+    @GetMapping("/getPageVisitsData")
+    public ResponseEntity<PageVisitsData> getPageVisitsData() {
+        PageVisitsData res = service.getPageVisitsData();
         return ResponseEntity.status(HttpStatus.OK).body(res);
     }
 

@@ -7,4 +7,8 @@ import java.time.LocalDate;
 @Mapper
 public interface VisitsMapper {
     int countPageVisits(LocalDate date, String page);
+
+    String getOneDayLobbyVisits(LocalDate date);
+
+    String getSumLobbyVisits();
 }

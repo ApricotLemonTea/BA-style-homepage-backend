@@ -11,4 +11,23 @@
             UPDATE visit_count = visit_count + 1
     </insert>
 
+    <select id="getOneDayLobbyVisits" resultType="java.lang.String">
+        SELECT
+            visit_count
+        FROM
+            hp_daily_visits
+        WHERE
+            page = 'lobby'
+            AND visit_date = #{date}
+    </select>
+
+    <select id="getSumLobbyVisits" resultType="java.lang.String">
+        SELECT
+            sum(visit_count)
+        FROM
+            hp_daily_visits
+        WHERE
+            page = 'lobby'
+    </select>
+
 </mapper>

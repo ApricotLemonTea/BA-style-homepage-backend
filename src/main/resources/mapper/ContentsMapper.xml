@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apricotlemontea.homepage.mapper.ContentsMapper">
+
+    <select id="getAnnouncementJa" resultType="com.apricotlemontea.homepage.dto.AnnouncementRecord">
+        SELECT
+            title_ja AS title,
+            contents_ja AS contents,
+            `time`
+        FROM
+            hp_announcement
+        ORDER BY
+            `time` DESC
+    </select>
+    <select id="getAnnouncementZh" resultType="com.apricotlemontea.homepage.dto.AnnouncementRecord">
+        SELECT
+            title_zh AS title,
+            contents_zh AS contents,
+            `time`
+        FROM
+            hp_announcement
+        ORDER BY
+            `time` DESC
+    </select>
+    <select id="getAnnouncementEn" resultType="com.apricotlemontea.homepage.dto.AnnouncementRecord">
+        SELECT
+            title_en AS title,
+            contents_en AS contents,
+            `time`
+        FROM
+            hp_announcement
+        ORDER BY
+            `time` DESC
+    </select>
+
+</mapper>

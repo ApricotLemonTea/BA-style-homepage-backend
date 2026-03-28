@@ -19,10 +19,6 @@ public class VisitsController {
         this.service = service;
     }
 
-    /**
-     * 统计页面访问数据
-     * @param page 访问的页面名
-     */
     @PostMapping("/countPageVisits")
     public ResponseEntity<Map<String, Object>> countPageVisits(@RequestParam String page) {
         Map<String, Object> res = new HashMap<>();

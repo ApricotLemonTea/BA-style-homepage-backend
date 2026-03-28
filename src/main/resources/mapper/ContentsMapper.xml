@@ -10,7 +10,7 @@
             contents_ja AS contents,
             `time`
         FROM
-            hp_announcement
+            hp_contents_announcement
         ORDER BY
             `time` DESC
     </select>
@@ -20,7 +20,7 @@
             contents_zh AS contents,
             `time`
         FROM
-            hp_announcement
+            hp_contents_announcement
         ORDER BY
             `time` DESC
     </select>
@@ -30,7 +30,7 @@
             contents_en AS contents,
             `time`
         FROM
-            hp_announcement
+            hp_contents_announcement
         ORDER BY
             `time` DESC
     </select>
@@ -40,7 +40,7 @@
             title,
             contents_ja AS contents
         FROM
-            hp_patch_note
+            hp_contents_patch_note
         ORDER BY
             title DESC
     </select>
@@ -49,7 +49,7 @@
             title,
             contents_zh AS contents
         FROM
-            hp_patch_note
+            hp_contents_patch_note
         ORDER BY
             title DESC
     </select>
@@ -58,7 +58,7 @@
             title,
             contents_en AS contents
         FROM
-            hp_patch_note
+            hp_contents_patch_note
         ORDER BY
             title DESC
     </select>

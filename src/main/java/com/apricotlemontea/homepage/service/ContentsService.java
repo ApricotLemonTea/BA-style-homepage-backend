@@ -4,6 +4,7 @@ import com.apricotlemontea.homepage.dto.AnnouncementData;
 import com.apricotlemontea.homepage.dto.PatchNoteData;
 import com.apricotlemontea.homepage.mapper.ContentsMapper;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 public class ContentsService {
@@ -13,6 +14,7 @@ public class ContentsService {
         this.mapper = mapper;
     }
 
+    @Transactional
     public AnnouncementData getAnnouncement() {
         AnnouncementData res = new AnnouncementData();
 
@@ -23,6 +25,7 @@ public class ContentsService {
         return res;
     }
 
+    @Transactional
     public PatchNoteData getPatchNote() {
         PatchNoteData res = new PatchNoteData();
 

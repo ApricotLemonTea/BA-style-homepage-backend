@@ -35,4 +35,32 @@
             `time` DESC
     </select>
 
+    <select id="getPatchNoteJa" resultType="com.apricotlemontea.homepage.dto.PatchNoteRecord">
+        SELECT
+            title,
+            contents_ja AS contents
+        FROM
+            hp_patch_note
+        ORDER BY
+            title DESC
+    </select>
+    <select id="getPatchNoteZh" resultType="com.apricotlemontea.homepage.dto.PatchNoteRecord">
+        SELECT
+            title,
+            contents_zh AS contents
+        FROM
+            hp_patch_note
+        ORDER BY
+            title DESC
+    </select>
+    <select id="getPatchNoteEn" resultType="com.apricotlemontea.homepage.dto.PatchNoteRecord">
+        SELECT
+            title,
+            contents_en AS contents
+        FROM
+            hp_patch_note
+        ORDER BY
+            title DESC
+    </select>
+
 </mapper>

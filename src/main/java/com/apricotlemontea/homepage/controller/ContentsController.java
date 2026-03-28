@@ -1,7 +1,7 @@
 package com.apricotlemontea.homepage.controller;
 
 import com.apricotlemontea.homepage.dto.AnnouncementData;
-import com.apricotlemontea.homepage.dto.AnnouncementRecord;
+import com.apricotlemontea.homepage.dto.PatchNoteData;
 import com.apricotlemontea.homepage.service.ContentsService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,6 +21,12 @@ public class ContentsController {
     @GetMapping("/announcement")
     public ResponseEntity<AnnouncementData> getAnnouncement() {
         AnnouncementData res = service.getAnnouncement();
+        return ResponseEntity.status(HttpStatus.OK).body(res);
+    }
+
+    @GetMapping("/patch-note")
+    public ResponseEntity<PatchNoteData> getPatchNote() {
+        PatchNoteData res = service.getPatchNote();
         return ResponseEntity.status(HttpStatus.OK).body(res);
     }
 

@@ -1,6 +1,7 @@
 package com.apricotlemontea.homepage.service;
 
 import com.apricotlemontea.homepage.dto.AnnouncementData;
+import com.apricotlemontea.homepage.dto.MissionData;
 import com.apricotlemontea.homepage.dto.PatchNoteData;
 import com.apricotlemontea.homepage.mapper.ContentsMapper;
 import org.springframework.stereotype.Service;
@@ -32,6 +33,17 @@ public class ContentsService {
         res.setPatchNoteJa(mapper.getPatchNoteJa());
         res.setPatchNoteZh(mapper.getPatchNoteZh());
         res.setPatchNoteEn(mapper.getPatchNoteEn());
+
+        return res;
+    }
+
+    @Transactional
+    public MissionData getMission() {
+        MissionData res = new MissionData();
+
+        res.setMissionJa(mapper.getMissionJa());
+        res.setMissionZh(mapper.getMissionZh());
+        res.setMissionEn(mapper.getMissionEn());
 
         return res;
     }

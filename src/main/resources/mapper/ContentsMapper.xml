@@ -63,4 +63,47 @@
             title DESC
     </select>
 
+    <select id="getMissionJa" resultType="com.apricotlemontea.homepage.dto.MissionRecord">
+        SELECT
+            tag_index,
+            title_ja AS title,
+            `times`,
+            max_times,
+            complete_date,
+            detail_url_ja as detail_url
+        FROM
+            hp_contents_mission
+        ORDER BY
+            _percent ASC,
+            complete_date DESC
+    </select>
+    <select id="getMissionZh" resultType="com.apricotlemontea.homepage.dto.MissionRecord">
+        SELECT
+            tag_index,
+            title_zh AS title,
+            `times`,
+            max_times,
+            complete_date,
+            detail_url_zh as detail_url
+        FROM
+            hp_contents_mission
+        ORDER BY
+            _percent ASC,
+            complete_date DESC
+    </select>
+    <select id="getMissionEn" resultType="com.apricotlemontea.homepage.dto.MissionRecord">
+        SELECT
+            tag_index,
+            title_en AS title,
+            `times`,
+            max_times,
+            complete_date,
+            detail_url_en as detail_url
+        FROM
+            hp_contents_mission
+        ORDER BY
+            _percent ASC,
+            complete_date DESC
+    </select>
+
 </mapper>

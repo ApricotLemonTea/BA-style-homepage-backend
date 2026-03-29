@@ -1,6 +1,7 @@
 package com.apricotlemontea.homepage.mapper;
 
 import com.apricotlemontea.homepage.dto.AnnouncementRecord;
+import com.apricotlemontea.homepage.dto.MissionRecord;
 import com.apricotlemontea.homepage.dto.PatchNoteRecord;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -16,5 +17,9 @@ public interface ContentsMapper {
     List<PatchNoteRecord> getPatchNoteJa();
     List<PatchNoteRecord> getPatchNoteZh();
     List<PatchNoteRecord> getPatchNoteEn();
+
+    List<MissionRecord> getMissionJa();
+    List<MissionRecord> getMissionZh();
+    List<MissionRecord> getMissionEn();
 
 }

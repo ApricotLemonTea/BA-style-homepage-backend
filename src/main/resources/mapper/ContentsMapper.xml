@@ -11,6 +11,8 @@
             `time`
         FROM
             hp_contents_announcement
+        WHERE
+            delete_flg = '0'
         ORDER BY
             `time` DESC
     </select>
@@ -21,6 +23,8 @@
             `time`
         FROM
             hp_contents_announcement
+        WHERE
+            delete_flg = '0'
         ORDER BY
             `time` DESC
     </select>
@@ -31,6 +35,8 @@
             `time`
         FROM
             hp_contents_announcement
+        WHERE
+            delete_flg = '0'
         ORDER BY
             `time` DESC
     </select>
@@ -41,6 +47,8 @@
             contents_ja AS contents
         FROM
             hp_contents_patch_note
+        WHERE
+            delete_flg = '0'
         ORDER BY
             title DESC
     </select>
@@ -50,6 +58,8 @@
             contents_zh AS contents
         FROM
             hp_contents_patch_note
+        WHERE
+            delete_flg = '0'
         ORDER BY
             title DESC
     </select>
@@ -59,6 +69,8 @@
             contents_en AS contents
         FROM
             hp_contents_patch_note
+        WHERE
+            delete_flg = '0'
         ORDER BY
             title DESC
     </select>
@@ -73,6 +85,8 @@
             detail_url_ja as detail_url
         FROM
             hp_contents_mission
+        WHERE
+            delete_flg = '0'
         ORDER BY
             _percent ASC,
             complete_date DESC
@@ -87,6 +101,8 @@
             detail_url_zh as detail_url
         FROM
             hp_contents_mission
+        WHERE
+            delete_flg = '0'
         ORDER BY
             _percent ASC,
             complete_date DESC
@@ -101,6 +117,8 @@
             detail_url_en as detail_url
         FROM
             hp_contents_mission
+        WHERE
+            delete_flg = '0'
         ORDER BY
             _percent ASC,
             complete_date DESC

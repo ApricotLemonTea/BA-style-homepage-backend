@@ -20,12 +20,19 @@ public class VisitsController {
     }
 
     @PostMapping("/countPageVisits")
-    public ResponseEntity<Map<String, Object>> countPageVisits(@RequestParam String page) {
+    public ResponseEntity<Map<String, Object>> countPageVisits(@RequestParam String page, @RequestHeader(required = false) String isApricotLemonTea) {
         Map<String, Object> res = new HashMap<>();
 
+        // 页面名不正确
         if (!Consts.PAGE_LIST.contains(page)) {
             res.put("msg", "invalid page name");
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(res);
+        }
+
+        // 不记录我自己的访问
+        if ("true".equals(isApricotLemonTea)) {
+            res.put("msg", "ApricotLemonTea");
+            return ResponseEntity.status(HttpStatus.OK).body(res);
         }
 
         Integer result = service.countPageVisits(page);

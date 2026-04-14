@@ -30,8 +30,8 @@ public class VisitsService {
         String sumLobbyVisits = mapper.getSumLobbyVisits();
 
         PageVisitsData res = new PageVisitsData();
-        res.setTodayLobbyVisits(todayLobbyVisits);
-        res.setSumLobbyVisits(sumLobbyVisits);
+        res.setTodayLobbyVisits(todayLobbyVisits == null ? "0" : todayLobbyVisits);
+        res.setSumLobbyVisits(sumLobbyVisits == null ? "0" : sumLobbyVisits);
 
         return res;
     }

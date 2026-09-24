@@ -30,4 +30,16 @@
             page = 'lobby'
     </select>
 
+    <select id="getVisitsDataList" resultType="com.apricotlemontea.homepage.dto.VisitsData">
+        SELECT
+            visit_date as date,
+            visit_count as todayLobbyVisits
+        FROM
+            hp_daily_visits
+        WHERE
+            page = 'lobby'
+        ORDER BY
+            visit_date
+    </select>
+
 </mapper>

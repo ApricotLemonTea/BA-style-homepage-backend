@@ -2,12 +2,14 @@ package com.apricotlemontea.homepage.controller;
 
 import com.apricotlemontea.homepage.consts.Consts;
 import com.apricotlemontea.homepage.dto.PageVisitsData;
+import com.apricotlemontea.homepage.dto.VisitsData;
 import com.apricotlemontea.homepage.service.VisitsService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -43,6 +45,12 @@ public class VisitsController {
     @GetMapping("/getPageVisitsData")
     public ResponseEntity<PageVisitsData> getPageVisitsData() {
         PageVisitsData res = service.getPageVisitsData();
+        return ResponseEntity.status(HttpStatus.OK).body(res);
+    }
+
+    @GetMapping("/getVisitsDataList")
+    public ResponseEntity<List<VisitsData>> getVisitsDataList() {
+        List<VisitsData> res = service.getVisitsDataList();
         return ResponseEntity.status(HttpStatus.OK).body(res);
     }
 
